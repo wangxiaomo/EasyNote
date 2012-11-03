@@ -1,0 +1,5 @@
+### Configuration ###
+
++ Mongo
+
+    DBNAME: EasyNote
