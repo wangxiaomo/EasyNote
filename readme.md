@@ -3,3 +3,4 @@
 + Mongo
 
     DBNAME: EasyNote
+    COLLECTIONS: notes
