@@ -2,5 +2,5 @@
 
 + Mongo
 
-    DBNAME: EasyNote
-    COLLECTIONS: notes
+        DBNAME: EasyNote
+        COLLECTIONS: notes
