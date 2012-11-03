@@ -9,7 +9,7 @@ def require_login(f):
     def _(*args, **kw):
         if session['logged_in'] != True:
             flash('You were Not Logged in')
-            return redirect(url_for('login'))
+            return redirect(url_for('master.login'))
         return f(*args, **kw)
     return _
 
