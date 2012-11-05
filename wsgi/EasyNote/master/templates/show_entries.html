@@ -20,9 +20,9 @@
   <script>
 $(function(){
   $('textarea').on('keydown', function(e){
-    e.preventDefault();
     if(e.ctrlKey && e.keyCode == 13){
       $('form').submit();
+      return false;
     }
   });
 });
