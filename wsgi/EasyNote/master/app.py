@@ -30,13 +30,10 @@ def show_entries():
 @master.route('/add', methods=['POST'])
 @require_login
 def add_entry():
-    try:
-        db = get_connection()
-        db.insert({'text':request.form['text'], 'date': make_datetime()})
-        flash('New Entry was successfully posted')
-        return redirect(url_for('.show_entries'))
-    except Exception as e:
-        return str(e)
+    db = get_connection()
+    db.notes.insert({'text':request.form['text'], 'date': make_datetime()})
+    flash('New Entry was successfully posted')
+    return redirect(url_for('.show_entries'))
 
 @master.route('/login', methods=['GET', 'POST'])
 def login():
