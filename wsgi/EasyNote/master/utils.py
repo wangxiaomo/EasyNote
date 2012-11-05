@@ -12,4 +12,4 @@ def get_connection():
     return db
 
 if __name__ == '__main__':
-    conn = get_connection()
+    print make_datetime()
