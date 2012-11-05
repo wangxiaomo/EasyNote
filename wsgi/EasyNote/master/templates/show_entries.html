@@ -16,13 +16,13 @@
     <li><em>Unbelievable.  No entries here so far</em>
   {% endfor %}
   </ul>
-  <script src="{{ url_for('.master.static', filename='js/jquery.min.js') }}"></script>
+  <script src="{{ url_for('master.static', filename='js/jquery.min.js') }}"></script>
   <script>
 $(function(){
   $('textarea').on('keydown', function(e){
-    e.preventDefault();
     if(e.ctrlKey && e.keyCode == 13){
       $('form').submit();
+      return false;
     }
   });
 });

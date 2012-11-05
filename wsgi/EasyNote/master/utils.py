@@ -2,15 +2,14 @@
 
 import os
 import pymongo
-from datetime import datetime
+from datetime import datetime,timedelta
 from dateutil import tz
 
 def make_datetime():
     utc = tz.gettz('UTC')
-    cst = tz.gettz('CST')
-    utc_now = datetime.utcnow().replace(tzinfo=utc)
-    cst_date = utc_now.astimezone(cst)
-    return datetime.strftime(cst_date, "%Y/%m/%d %H:%M")
+    utc_now = datetime.utcnow()
+    cst_now = utc_now + timedelta(hours=8)
+    return datetime.strftime(cst_now, "%Y/%m/%d %H:%M")
 
 def get_connection():
     db = pymongo.Connection(os.environ['OPENSHIFT_NOSQL_DB_URL']).EasyNote
