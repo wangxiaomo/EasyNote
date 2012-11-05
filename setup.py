@@ -6,5 +6,5 @@ setup(name='note-xiaomo',
       author='xiaomo',
       author_email='wxm4ever@gmail.com',
       url='http://www.python.org/sigs/distutils-sig/',
-      install_requires=['flask', 'PyMongo'],
+      install_requires=['flask', 'PyMongo', 'python-dateutil'],
      )
