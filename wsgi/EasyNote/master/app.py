@@ -21,7 +21,7 @@ PASSWORD = '123'
 
 master = Blueprint('master', __name__, static_folder='static', template_folder='templates')
 
-@master.route('/index')
+@master.route('/')
 def show_entries():
     db = get_connection()
     entries = db.notes.find().sort('_id', -1).limit(20)
