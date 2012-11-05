@@ -1,6 +1,4 @@
 #!/usr/bin/python
-import sys
-sys.path.insert(0, '/var/lib/stickshift/306a6258389c4b528f45b19c50582b12/note/virtenv/lib/python2.6/site-packages/')
 
 import os
 from EasyNote.app import app
