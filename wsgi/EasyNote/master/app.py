@@ -23,9 +23,12 @@ master = Blueprint('master', __name__, static_folder='static', template_folder='
 
 @master.route('/')
 def show_entries():
-    db = get_connection()
-    entries = db.notes.find().sort('_id', -1).limit(20)
-    return render_template('show_entries.html', entries=entries)
+    try:
+        db = get_connection()
+        entries = db.notes.find().sort('_id', -1).limit(20)
+        return render_template('show_entries.html', entries=entries)
+    except Exception as e:
+        return str(e)
 
 @master.route('/add', methods=['POST'])
 @require_login
