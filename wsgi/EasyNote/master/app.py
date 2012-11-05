@@ -21,7 +21,6 @@ PASSWORD = '123'
 
 master = Blueprint('master', __name__, static_folder='static', template_folder='templates')
 
-@master.route('/')
 @master.route('/index')
 def show_entries():
     db = get_connection()
